@@ -1,0 +1,60 @@
+<%@ page contentType="text/html; Charset=GB2312" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<% String youName=request.getParameter("name");
+		String yourSex=request.getParameter("R");
+		String secretMess=request.getParameter("secret");
+		String personName[]=request.getParameterValues("superstar");
+		out.println("<P>ÄúµÄÐÕÃû£º"+yourName+"</P>");
+		out.println("<P>ÄúµÄÐÕ±ð£º"+yourSex+"</P>");
+		out.println("<P>ÄúÏ²»¶µÄ¸èÊÖ£º");
+		if(personNmae==null){
+			out.print("Ò»¸ö¶¼²»Ï²»¶");
+		}
+		else{
+			for(int k=0;k<personName.length;k++){
+				out.println(" "+personNmae[k]);
+			}
+		}
+		out.println("<P>hiddenÌá½»µÄÖµ:"+secretMess);
+		
+	%>
+</body>
+</html>
+
+
+
+
+
+
+
+<%@ page contentType="text/html; Charset=GB2312" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="receive.jsp" method=post name=form>
+	<p>ÇëÊäÈëÏÂÁÐÐÅÏ¢:
+	<BR>	ÇëÊäÈëÄúµÄÐÕÃû:<lnput type="text" name="name" value="ÕÅÈý"></BR>
+	<BR>Ñ¡ÔñÐÔ±ð:<lnput type="radio" name="R" value="ÄÐ" checked="defalt">ÄÐ
+			<lnput type="radio" name ="R" value="Å®">Å®
+	</BR>
+	<BR>Ñ¡ÔñÄúÏ²»¶µÄ¸èÊÖ:
+		<lnput type="checkbox" name="superstar" value="ÕÅ¸èÊÖ">ÕÅ¸èÊÖ
+		<lnput type="checkbox" name="superstar" value="Àî¸èÊÖ ">Àî¸èÊÖ
+		<lnput type="checkbox" name="superstar" value="Áõ¸èÊÖ">Áõ¸èÊÖ
+		<lnput type="checkbox" name="superstar" value="Íõ¸èÊÖ">Íõ¸èÊÖ
+	</BR>
+	<lnput type="hidden" value="ÕâÊÇÒþ²ØÐÅÏ¢" name="secret">
+	<lnput type="submit" value="Ìá½»" name="submit">
+</form>
+</body>
+</html>
